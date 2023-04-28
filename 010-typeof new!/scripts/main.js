@@ -2,11 +2,11 @@ let myName = "Willy"
 let myAge = 22
 let myHappiness = true
 let newVar ='Something'
-const myConst = 22
+const myConst = 42
 console.log(myAge == myName)
 console.log(myAge === myName)
 
-let myVar
+let myVar = null
 console.log('myVar is typeof ${typeof myVar}')
 
 console.log ('myName is typeof ${typeof myName}')
@@ -16,7 +16,7 @@ console.log('myHappiness is typeof ${typeof myHappiness}')
 
 // don't use var
 if (true) {
-    const myConst = 23
+    const myConst = 43
     console.log(myConst)
 } else {
 
