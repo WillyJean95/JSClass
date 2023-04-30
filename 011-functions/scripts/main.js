@@ -11,8 +11,7 @@
 doMoreMath = (a, b) => a * b
     
 
-
-console.log(doMoreMath(20, 30))
+    console.log(doMoreMath(20, 30))
 
 const result = doMath(50, 20) 
-console.log('result was returned from the function' ,(result))
+    console.log(`result was returned from the function ${result}`)
