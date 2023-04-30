@@ -7,4 +7,9 @@
     divEL.appendChild(h1)
 }
 
-updateDOM('JavaScript is Fun!')
+const mileage = (miles, gallons, price) =>  miles/gallons * price
+    
+
+
+updateDOM(mileage(300, 10, 3.50))
+
