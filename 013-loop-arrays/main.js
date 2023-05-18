@@ -1,5 +1,5 @@
-const myMPG = []
-const myTripCost = []
+const MY_MPG = []
+const MY_TRIP_COST = []
 
 const updateDOM = (input) => {
 const divEL = document.querySelector('#output')
@@ -8,32 +8,36 @@ h1.textContent = input
 divEL.appendChild(h1)
 }
 
-const trackMPGCost = (miles, gallons, price = 3.79) =>  {
+const trackMPGandCost = (miles, gallons, price = 3.79) =>  {
 const MPG = Math.round(miles/gallons)
 const tripCost = Math.round(gallons * price)
 updateDOM(`Mileage is ${MPG} and trip cost is ${tripCost}`)
-myMPG.push(MPG)
-myTripCost.push(tripCost)
+MY_MPG.push(MPG)
+MY_TRIP_COST.push(tripCost)
+}
+
+const calculateSUM = (arr) => {
+    let sum = 0
+    for(let i=0; i < arr.length; i++) {
+        sum = sum + arr[i]
+    }
+    return sum
 }
 
 const calculateAvg = () => {
-    let sumMPG = 0
-    let sumTripCost = 0
-for(let i = 0; i < myMPG.length; i++) {
-    sumMPG = sumMPG + myMPG[i]
-    sumTripCost = sumTripCost + myTripCost[i]
-}
-    let avgMPG = Math.round(sumMPG/myMPG.length)
-    let avgTripCost = sumTripCost/myTripCost.length
+    let sumMPG = calculateSUM(MY_MPG)
+    let sumTripCost = calculateSUM(MY_TRIP_COST)
+    let avgMPG = Math.round(sumMPG/MY_MPG.length)
+    let avgTripCost = sumTripCost/MY_TRIP_COST.length
     updateDOM(`Average MPG is ${avgMPG}`)
     updateDOM(`Average Trip is ${avgTripCost}`)
 }
 
-// calculateavgCost
-trackMPGCost(300, 10, 5.40)
-trackMPGCost(320, 12, 5)
-trackMPGCost(100, 7, 4.20)
-trackMPGCost(600, 24, 5.70)
-trackMPGCost(50, 2, 3.40)
-trackMPGCost(320, 12, 5)
+
+trackMPGandCost(300, 10, 5.40)
+trackMPGandCost(320, 12, 5)
+trackMPGandCost(100, 7, 4.20)
+trackMPGandCost(600, 24, 5.70)
+trackMPGandCost(50, 2, 3.40)
+trackMPGandCost(320, 12, 5)
 calculateAvg()
